@@ -1,0 +1,26 @@
+.contact-btn {
+  padding: 5.5px 12px;
+  background: none;
+  border: 1px solid white;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  font-family: 'Inter';
+}
+
+.contact-btn:hover {
+  border-color: #253866;
+  color: #253866;
+  transition: 0.2s;
+}
+
+.contact-btn:active {
+  background-color: #253866;
+  color: white;
+  transition: 0.1s;
+}

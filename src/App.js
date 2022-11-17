@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from './Card/Card'
+import './App.css'
+import { useState, useEffect } from 'react'
+
+const URL = 'https://random-data-api.com/api/v2/users'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [user, setUser] = useState(undefined)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const response = await fetch(URL)
+      const res = await response.json()
+      console.log('response', res)
+      setUser(res)
+      setLoading(false)
+    }
+
+    fetchUser()
+  }, [])
+
+  return <div className='bg-global'>{loading ? <span>Loading...</span> : <Card user={user} />}</div>
 }
 
-export default App;
+export default App
