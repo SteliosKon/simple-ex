@@ -1,11 +1,10 @@
 .contact-btn {
   padding: 5.5px 12px;
-  background: none;
+  background: transparent;
   border: 1px solid white;
   border-radius: 20px;
   color: white;
   cursor: pointer;
-
   font-style: normal;
   font-weight: 500;
   font-size: 12px;

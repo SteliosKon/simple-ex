@@ -41,13 +41,11 @@
   margin-bottom: 12px;
 }
 
-.email,
-.location,
-.date {
+.mb-8 {
   margin-bottom: 8px;
 }
 
-.contact {
+.contact-container {
   display: flex;
   justify-content: center;
 }

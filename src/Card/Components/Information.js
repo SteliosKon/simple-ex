@@ -2,6 +2,7 @@ import './Information.css'
 import Contact from '../../Buttons/Contact/Contact'
 import New from '../../Buttons/New/New'
 import { EmailIcon, DateIcon, LocationIcon } from '../../Icons/svg'
+import dateFormatter from '../../Utils/dateFormatter'
 
 const Information = ({ user }) => {
   const {
@@ -12,7 +13,8 @@ const Information = ({ user }) => {
     address: { city, country },
   } = user
 
-  const formattedDate = date_of_birth.split('').reverse().join('').replaceAll('-', '/')
+  const formattedDate = dateFormatter(date_of_birth)
+
   return (
     <div className='info'>
       <div className='fullname-container'>
@@ -26,27 +28,21 @@ const Information = ({ user }) => {
       <div className='horizontal-line' />
       <div className='details'>
         <div className='email-container'>
-          <span>
-            <EmailIcon />
-          </span>
-          <span className='email'>{email}</span>
+          <EmailIcon />
+          <span className='mb-8'>{email}</span>
         </div>
         <div className='location-container'>
-          <span>
-            <LocationIcon />
-          </span>
-          <span className='location'>
+          <LocationIcon />
+          <span className='mb-8'>
             {city}, {country}
           </span>
         </div>
         <div className='date-container'>
-          <span>
-            <DateIcon />
-          </span>
-          <span className='date'> {formattedDate}</span>
+          <DateIcon />
+          <span className='mb-8'> {formattedDate}</span>
         </div>
       </div>
-      <div className='contact'>
+      <div className='contact-container'>
         <Contact />
       </div>
     </div>
